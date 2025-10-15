@@ -1,0 +1,244 @@
+/* FeedbackForm.css */
+section {
+  min-height: 100vh;
+  background-image: url(../Pictures/Home.jpg); /* City background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)); /* Dark overlay for better readability */
+  z-index: 1;
+}
+
+.feedback-container {
+  max-width: 900px; /* Further increased width */
+  height: auto;
+  margin: 2rem auto;
+  padding: 0 1.5rem; /* Slightly more padding around container */
+  background-color: transparent; /* Transparent to let page background show through */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for definition */
+  overflow: hidden;
+  z-index: 2;
+  backdrop-filter: blur(5px); /* Reduced blur to show more of the background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass effect */
+}
+
+.feedback-form {
+  padding: 3rem; /* Increased padding inside form */
+}
+
+.feedback-form h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #fff; /* White for better contrast on background */
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+}
+
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #fff; /* White labels */
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent inputs */
+  color: #fff; /* White text in inputs */
+  backdrop-filter: blur(5px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00f;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.2);
+  color: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.personal-info-grid,
+.text-areas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; /* Gap between columns */
+  margin-bottom: 1.75rem;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem; /* Tight gap for stars */
+  margin-top: 0.75rem;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.star-rating label {
+  cursor: pointer;
+  font-size: 2.2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  position: relative;
+}
+
+.star-rating label:hover {
+  transform: scale(1.1);
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star.empty {
+  color: #b0b0b0; /* Lighter gray for empty stars */
+  text-shadow: none;
+}
+
+.star.filled {
+  color: #ffd700; /* Yellow/Gold for filled stars */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #00f, #0066cc); /* Gradient for depth */
+  color: #fff;
+  border: none;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #009, #004499);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    background-attachment: scroll; /* Better performance on mobile */
+    padding: 1rem;
+  }
+
+  .feedback-container {
+    margin: 1rem;
+    padding: 0;
+    max-width: 90%;
+  }
+
+  .feedback-form {
+    padding: 2rem;
+  }
+
+  .feedback-form h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .personal-info-grid,
+  .text-areas-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.9rem;
+    font-size: 0.98rem;
+  }
+
+  .star-rating {
+    gap: 0.15rem;
+    padding: 0.8rem;
+  }
+
+  .star-rating label {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-form {
+    padding: 1.5rem;
+  }
+
+  .feedback-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+  }
+
+  .personal-info-grid,
+  .text-areas-grid {
+    gap: 0.75rem;
+  }
+
+  .star-rating {
+    padding: 0.6rem;
+  }
+
+  .star-rating label {
+    font-size: 1.6rem;
+  }
+
+  .submit-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

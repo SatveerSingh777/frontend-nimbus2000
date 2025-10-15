@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Reset cursor to default everywhere */
+html, body, #root, * {
+  cursor: default !important;
+  user-select: none; /* Prevents text selection if that's contributing */
+}
+
+/* Ensure form elements don't bleed styles */
+input, textarea, select {
+  cursor: text; /* Keep text cursor only inside actual inputs */
+}
+
+/* Optional: If it's focus-related, reset focus styles */
+*:focus {
+  outline: none; /* Or your preferred focus style */
+  cursor: auto;
+}
